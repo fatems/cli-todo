@@ -1,0 +1,32 @@
+# Go build artifacts
+*.exe
+*.bin
+*.out
+
+# Compiled executable (based on directory name)
+cli-todo
+
+# Log files
+*.log
+
+# Data persistence files
+todos.json
+
+# Configuration files (if not meant to be committed)
+config.json
+
+# Test temporary files
+test_todos.json
+test_autosave.json
+
+# IDE and editor files
+.idea/
+.vscode/
+.cursor/
+*.swp
+*~
+.#*
+
+# OS generated files
+.DS_Store
+Thumbs.db
