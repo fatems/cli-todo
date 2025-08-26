@@ -11,7 +11,7 @@ This is a command-line interface (CLI) application for managing a todo list, bui
 *   **Auto-Save Goroutine:** A background goroutine periodically saves the todo list, preventing data loss.
 *   **Interactive Mode:** A continuous interactive mode allows users to manage todos without restarting the application for each command.
 *   **New Commands:** `edit` (task description), `clear-completed`, `search`, `uncomplete`, `undo`.
-*   **Advanced Listing:** The `list` command now supports filtering by status, priority, and tags, as well as sorting by various fields.
+*   **Advanced Listing:** The `list` command in **single-command mode** supports filtering by status, priority, and tags, as well as sorting by various fields.
 *   **Confirmation Prompts:** Destructive actions like `delete` and `clear-completed` require user confirmation.
 *   **Configurable Settings:** Application settings are managed via a `config.json` file.
 *   **Unit Tests:** Core functionalities are covered by unit tests to ensure correctness.
@@ -106,7 +106,6 @@ Ensure you have Go installed on your system. You can download it from [golang.or
 
     *   `add Finish README -p high -d 2024-04-30 -t docs,urgent`
     *   `edit 1 "Refined README content"`
-    *   `list -status incomplete -sort-by priority -sort-order desc`
     *   `search "README"`
     *   `complete 1`
     *   `uncomplete 1`
@@ -116,7 +115,7 @@ Ensure you have Go installed on your system. You can download it from [golang.or
     *   `help` (for a list of interactive commands)
     *   `exit` (to quit interactive mode)
 
-    *Note: In interactive mode, auto-save will periodically save your list in the background.* 
+    *Note: In interactive mode, auto-save will periodically save your list in the background. Advanced listing options (filtering and sorting) are only available in single-command mode.* 
 
 ## Configuration
 
