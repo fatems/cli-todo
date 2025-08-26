@@ -10,7 +10,7 @@ This is a command-line interface (CLI) application for managing a todo list, bui
 *   **JSON Persistence:** Todo list data is automatically saved to and loaded from a `todos.json` file.
 *   **Auto-Save Goroutine:** A background goroutine periodically saves the todo list, preventing data loss.
 *   **Interactive Mode:** A continuous interactive mode allows users to manage todos without restarting the application for each command.
-*   **New Commands:** `edit` (task description), `clear-completed`, `search`, `uncomplete`, `undo`.
+*   **New Commands:**`clear-completed`, `search`, `uncomplete`, `undo`.
 *   **Advanced Listing:** The `list` command in **single-command mode** supports filtering by status, priority, and tags, as well as sorting by various fields.
 *   **Confirmation Prompts:** Destructive actions like `delete` and `clear-completed` require user confirmation.
 *   **Configurable Settings:** Application settings are managed via a `config.json` file.
