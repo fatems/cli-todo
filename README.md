@@ -80,10 +80,6 @@ Ensure you have Go installed on your system. You can download it from [golang.or
         ```bash
         go run . -clear-completed
         ```
-    *   **Search tasks:**
-        ```bash
-        go run . -search "report"
-        ```
     *   **List all todos (with filtering and sorting options):**
         ```bash
         go run . -list -filter-status incomplete -filter-priority high -filter-tags work,urgent -sort-by due_date -sort-order desc
