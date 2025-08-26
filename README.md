@@ -132,9 +132,7 @@ Example `config.json`:
 To run the unit tests for the application:
 
 1.  **Navigate to the project directory:**
-    ```bash
-    cd cli/todo
-    ```
+   
 2.  **Execute the tests:**
     ```bash
     go test
