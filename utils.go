@@ -9,6 +9,25 @@ import (
 	"time"
 )
 
+// Duration is a custom type that allows time.Duration to be marshaled/unmarshaled
+// from JSON as a human-readable string (e.g., "30s", "1m").
+type Duration time.Duration
+
+// UnmarshalText implements the encoding.TextUnmarshaler interface.
+func (d *Duration) UnmarshalText(text []byte) error {
+	parsed, err := time.ParseDuration(string(text))
+	if err != nil {
+		return err
+	}
+	*d = Duration(parsed)
+	return nil
+}
+
+// MarshalText implements the encoding.TextMarshaler interface.
+func (d Duration) MarshalText() ([]byte, error) {
+	return []byte(time.Duration(d).String()), nil
+}
+
 // SetupLogger configures the application-wide logger.
 // It sets the output destination to standard error (os.Stderr) and defines
 // the logging flags to include date, time, and source file information.
@@ -62,17 +81,17 @@ func PrintUserMessage(message string) {
 
 // Config holds the application's configurable settings.
 type Config struct {
-	DataFile         string        `json:"data_file"`
-	AutoSaveInterval time.Duration `json:"auto_save_interval"`
-	LogFilePath      string        `json:"log_file_path"`
+	DataFile         string   `json:"data_file"`
+	AutoSaveInterval Duration `json:"auto_save_interval"` // Use custom Duration type
+	LogFilePath      string   `json:"log_file_path"`
 }
 
 // DefaultConfig returns a new Config with default values.
 func DefaultConfig() Config {
 	return Config{
 		DataFile:         "todos.json",
-		AutoSaveInterval: 1 * time.Minute,
-		LogFilePath:      "", // Default to no log file (stdout/stderr only)
+		AutoSaveInterval: Duration(1 * time.Minute), // Cast to custom Duration type
+		LogFilePath:      "",                        // Default to no log file (stdout/stderr only)
 	}
 }
 

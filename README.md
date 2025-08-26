@@ -124,7 +124,7 @@ Example `config.json`:
 ```
 
 -   `data_file`: The name of the JSON file where todos are stored.
--   `auto_save_interval`: The interval at which the todo list is automatically saved (e.g., "1m0s" for 1 minute).
+-   `auto_save_interval`: The interval at which the todo list is automatically saved (e.g., "1m0s" for 1 minute). **Ensure the value is enclosed in double quotes (e.g., "30s"). Changes require an application restart.**
 -   `log_file_path`: Optional. If set, application logs will be written to this file in addition to `stderr`.
 
 ## Running Tests

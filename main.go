@@ -4,9 +4,11 @@ import (
 	// "flag" // No longer needed if config manages log-file
 	"fmt" // Package for formatted I/O (e.g., printing to console)
 	"os"  // Package for operating system functionalities (e.g., exiting the program)
+
 	// "strconv" // No longer needed in main.go
 	// "strings" // No longer needed in main.go
 	// Package for time-related functions (e.g., auto-save interval)
+	"time"
 )
 
 const (
@@ -40,7 +42,7 @@ func main() {
 
 	// Start a background goroutine for auto-saving the todo list periodically.
 	// This ensures that changes are saved even if the application isn't explicitly exited.
-	StartAutoSave(todoList, config.DataFile, config.AutoSaveInterval)
+	StartAutoSave(todoList, config.DataFile, time.Duration(config.AutoSaveInterval))
 
 	// Delegate all command parsing and execution (both single command and interactive mode)
 	// to the HandleCommands function in the cli module.
