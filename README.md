@@ -60,10 +60,6 @@ Ensure you have Go installed on your system. You can download it from [golang.or
         ```bash
         go run . -add "Learn Go modules" # Note: Priority, Due Date, Tags not supported via single -add flag currently.
         ```
-    *   **Edit a task:** (Modify task description)
-        ```bash
-        go run . -edit 1 "Updated task description"
-        ```
     *   **Mark a todo as complete:**
         ```bash
         go run . -complete 1
